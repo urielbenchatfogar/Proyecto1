@@ -1,0 +1,495 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+   :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --border: #e0dfd8;
+    --text: #1a1a18;
+    --text-soft: #5f5e5a;
+    --text-muted: #888780;
+    --accent: #1d6f5c;
+    --accent-light: #d0ede5;
+    --accent-mid: #5dcaa5;
+}
+
+/* =========================================
+   NAVEGACIÓN
+   ========================================= */
+.page-inicio nav,
+.page-rolso nav,
+.page-funciones nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+}
+
+.page-inicio nav ul,
+.page-rolso nav ul,
+.page-funciones nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+}
+
+.page-inicio nav a,
+.page-rolso nav a,
+.page-funciones nav a {
+    display: block;
+    padding: 0.85rem 1.1rem;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 13.5px;
+    color: var(--text-soft);
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.page-inicio nav a:hover,
+.page-rolso nav a:hover,
+.page-funciones nav a:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+}
+
+/* =========================================
+   BODY Y LAYOUT
+   ========================================= */
+.page-inicio,
+.page-rolso,
+.page-funciones {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   MAIN
+   ========================================= */
+.page-inicio main,
+.page-rolso main,
+.page-funciones main {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    flex: 1;
+}
+
+.page-inicio main {
+    max-width: 800px;
+    text-align: center;
+}
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+.page-inicio h1,
+.page-rolso h1,
+.page-funciones h1 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-mid);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.page-funciones h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--accent);
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent-mid);
+    margin: 2.5rem 0 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.page-funciones h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    color: var(--text-soft);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.page-rolso .card-recurso h4 {
+    font-size: 12.5px;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--accent-light);
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   PÁRRAFOS Y SECCIONES
+   ========================================= */
+.page-inicio p,
+.page-rolso p,
+.page-funciones p {
+    font-size: 14.5px;
+    color: #444441;
+    margin-bottom: 1rem;
+}
+
+.page-funciones section,
+.page-rolso section {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   CODE
+   ========================================= */
+.page-funciones code {
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    background: #e8e6de;
+    color: var(--text);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   BLOQUE DEFINICIÓN
+   ========================================= */
+.page-funciones .def {
+    background: var(--accent-light);
+    border: 1px solid var(--accent-mid);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-funciones .def strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: system-ui, sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.page-funciones .def p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--text);
+}
+
+/* =========================================
+   CARDS (funciones)
+   ========================================= */
+.page-funciones .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 1rem 0 1.5rem;
+}
+
+.page-funciones .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+}
+
+.page-funciones .card-title {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: system-ui, sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.page-funciones .card p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #444441;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ESTADOS DE PROCESO
+   ========================================= */
+.page-funciones .states {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0.75rem 0 1.25rem;
+}
+
+.page-funciones .state {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    min-width: 120px;
+    flex: 1;
+}
+
+.page-funciones .state span {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    color: var(--accent);
+}
+
+.page-funciones .state em {
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* =========================================
+   TABLA DE SISTEMAS DE ARCHIVOS
+   ========================================= */
+.page-funciones table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: 13.5px;
+    margin: 1rem 0 1.5rem;
+}
+
+.page-funciones th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--accent-mid);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.page-funciones td {
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    color: #444441;
+}
+
+.page-funciones tr:last-child td {
+    border-bottom: none;
+}
+
+.page-funciones tr:hover td {
+    background: var(--accent-light);
+}
+
+/* =========================================
+   LISTA DE SEGURIDAD (tags)
+   ========================================= */
+.page-funciones main ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0.75rem 0 1.25rem;
+}
+
+.page-funciones main li {
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid var(--accent-mid);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-weight: 500;
+}
+
+/* =========================================
+   GRID DE RECURSOS (rolso)
+   ========================================= */
+.page-rolso .grid-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 1.5rem;
+}
+
+.page-rolso .card-recurso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.page-rolso .card-recurso p {
+    font-size: 13.5px;
+    color: #444441;
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+}
+
+.page-rolso .card-recurso img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    background: var(--accent-light);
+}
+
+.page-rolso #diagrama-sistema-operativo {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto 1.5rem;
+}
+
+/* =========================================
+   PÁGINA DE INICIO
+   ========================================= */
+.page-inicio .subtitulo {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-soft);
+    border: none;
+    padding: 0;
+    margin: -1rem 0 2rem;
+    font-family: system-ui, sans-serif;
+}
+
+.page-inicio .lista-enlaces {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding: 0;
+}
+
+.page-inicio .lista-enlaces li {
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+}
+
+.page-inicio .lista-enlaces li a {
+    display: block;
+    padding: 10px 22px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: none;
+    transition: background 0.2s;
+}
+
+.page-inicio .lista-enlaces li a:hover {
+    background: #155c4a;
+    border-radius: 6px;
+    border-bottom: none;
+    color: #ffffff;
+}
+
+.page-inicio .galeria-inicio {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.page-inicio .galeria-inicio a {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.page-inicio .galeria-inicio a:hover {
+    transform: scale(1.03);
+}
+
+.page-inicio .galeria-inicio img {
+    width: 300px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.page-inicio footer,
+.page-rolso footer,
+.page-funciones footer {
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--surface);
+}
+
+.page-inicio footer p,
+.page-rolso footer p,
+.page-funciones footer p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.page-inicio footer a,
+.page-rolso footer a,
+.page-funciones footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: none;
+}
+
+.page-inicio footer a:hover,
+.page-rolso footer a:hover,
+.page-funciones footer a:hover {
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+/* Créditos inicio */
+.page-inicio .corazon {
+    display: inline-block;
+    animation: latido 1.5s infinite;
+}
+
+.page-inicio .autor {
+    color: var(--text-soft);
+    font-weight: 600;
+}
+
+@keyframes latido {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}

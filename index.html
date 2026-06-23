@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-inicio">
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="rolso.html">Rol del sistema operativo</a></li>
+            <li><a href="funcionesdelso.html">Funciones del sistema operativo</a></li>
+        </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <section>
+            <h1>Sistemas Operativos</h1>
+            <h2 class="subtitulo">Selecciona la sección a la que deseas ir</h2>
+
+            <ul class="lista-enlaces">
+                <li><a href="rolso.html"> A1.3.1 Rol del sistema operativo</a></li>
+                <li><a href="funcionesdelso.html"> A1.3.2 Funciones del sistema operativo</a></li>
+            </ul>
+
+            <div class="galeria-inicio">
+                <a href="rolso.html">
+                    <img src="https://itsqmet.edu.ec/wp-content/uploads/2024/12/sistemas-operativos-1.webp" alt="Rol del sistema operativo">
+                </a>
+                <a href="funcionesdelso.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQddPtZrgf5Gp2ff_CQbsf1qCUdJKSC-AM26w&s" alt="Funciones del sistema operativo">
+                </a>
+            </div>
+        </section>
     </main>
-  </body>
+
+    <footer>
+        <p>
+            Hecho con <span class="corazon">❤️</span> por
+            <span class="autor">Juan Casetta</span>,
+            <span class="autor">Delfina Brugna</span> y
+            <span class="autor">Uriel Benchat</span>
+        </p>
+    </footer>
+
+</body>
 </html>

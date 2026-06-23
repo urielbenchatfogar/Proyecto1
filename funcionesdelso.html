@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones del sistema operativo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-funciones">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="rolso.html">Rol del sistema operativo</a></li>
+            <li><a href="funcionesdelso.html">Funciones del sistema operativo</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="A1.3.2">
+            <h1>A1.3.2 Funciones del sistema operativo</h1>
+
+            <section id="processes">
+                <h2>Procesos</h2>
+
+                <div class="def">
+                    <strong>Un proceso</strong>
+                    <p>Es una instancia de un programa en ejecución. Un programa es un conjunto pasivo de instrucciones; un proceso es la ejecución activa y dinámica de esas instrucciones.</p>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">Ejecución de un programa</div>
+                        <p>Al ejecutar un programa, sus instrucciones se cargan en memoria y el SO crea un proceso para gestionar su ejecución. Pueden existir múltiples procesos del mismo programa al mismo tiempo.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Unidad de propiedad de recursos</div>
+                        <p>Cada proceso recibe un área aislada (sandbox) que incluye: memoria privada (código, datos y pila), intervalos de tiempo de CPU, y acceso a archivos abiertos y conexiones de red.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Entidad gestionada por el SO</div>
+                        <p>El SO registra: estado del proceso, ID de proceso (PID), registros de CPU, prioridad y estadísticas de uso de recursos.</p>
+                    </div>
+                </div>
+
+                <h3>Estados de un proceso</h3>
+                <div class="states">
+                    <div class="state">
+                        <span>Nuevo</span>
+                        <em>Siendo creado y cargado en memoria</em>
+                    </div>
+                    <div class="state">
+                        <span>Listo</span>
+                        <em>Esperando su turno en la CPU</em>
+                    </div>
+                    <div class="state">
+                        <span>En ejecución</span>
+                        <em>Ejecutando instrucciones en la CPU</em>
+                    </div>
+                    <div class="state">
+                        <span>Bloqueado</span>
+                        <em>Esperando un evento externo (E/S, red…)</em>
+                    </div>
+                    <div class="state">
+                        <span>Terminado</span>
+                        <em>Finalizado; siendo limpiado por el SO</em>
+                    </div>
+                </div>
+
+                <p>Al rastrear los estados, el SO puede planificar procesos, liberar recursos retenidos por procesos bloqueados y gestionar estados de error.</p>
+
+                <h3>Hilos (Threads)</h3>
+                <p>Un hilo es la secuencia más pequeña de instrucciones que puede ser gestionada de forma independiente por un planificador. Múltiples hilos dentro de un proceso comparten el mismo espacio de memoria pero pueden ejecutarse en paralelo en sistemas multinúcleo. Ejemplo: un procesador de texto usa hilos separados para renderizar, revisar ortografía y gestionar la entrada del usuario.</p>
+            </section>
+
+            <section id="integrity">
+                <h2>Integridad del sistema</h2>
+
+                <div class="def">
+                    <strong>Integridad del sistema</strong>
+                    <p>Estado de un sistema cuando realiza sus funciones previstas de forma correcta y confiable, sin alteraciones no autorizadas. Incluye corrección, completitud, precisión de datos, protección contra manipulación y resiliencia.</p>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">Aislamiento de procesos</div>
+                        <p>Cada proceso opera en su propio espacio de memoria virtual, evitando interferencias accidentales o maliciosas con otros procesos o con el SO.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Protección de memoria</div>
+                        <p>Los espacios de memoria separados impiden que un proceso lea o escriba en la memoria de otro proceso o del SO.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Modo usuario / modo kernel</div>
+                        <p>Separa las operaciones que requieren acceso directo al hardware (modo kernel) de las que no lo requieren (modo usuario). Las aplicaciones no pueden decidir dónde leer o escribir en memoria.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Planificación de CPU</div>
+                        <p>Asigna tiempo de CPU a los procesos, asegurando que las operaciones críticas no sean innecesariamente bloqueadas por las aplicaciones de usuario.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Control de acceso y permisos</div>
+                        <p>Permisos individuales y de grupo asignados a cada archivo y directorio. Las listas de control de acceso (ACL) brindan un control más flexible sobre los recursos del sistema.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Seguridad del sistema de archivos</div>
+                        <p>Gestiona permisos de lectura, escritura y ejecución por archivo para el propietario, el grupo y otros. Solo procesos y usuarios autorizados pueden acceder a archivos específicos.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Cifrado</div>
+                        <p>Protege la confidencialidad e integridad de los datos. Ejemplos: BitLocker (Windows), FileVault (macOS), dm-crypt/LUKS (Linux).</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Firewalls y antivirus</div>
+                        <p>Los firewalls monitorean el tráfico de red a nivel de paquetes. El antivirus supervisa archivos en busca de comportamiento malicioso y firmas de virus conocidas.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Gestión de parches</div>
+                        <p>Despliegue de cambios de código (parches) para corregir errores, vulnerabilidades de seguridad o añadir funcionalidades. Los parches incluyen verificación de integridad antes de su instalación. Categorías: corrección de errores, parches de seguridad, mejoras de funciones, actualizaciones de compatibilidad.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Funciones de reversión (Rollback)</div>
+                        <p>Permiten volver al último estado conocido como bueno si una actualización causa problemas. Windows: Restaurar sistema. macOS: Time Machine.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Verificación de integridad de datos</div>
+                        <p>Las sumas de verificación (checksums) y los hashes comprueban la integridad de los archivos comparándolos con valores conocidos, detectando corrupción o cambios no autorizados.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Monitoreo y registro (Logging)</div>
+                        <p>El monitoreo rastrea métricas de rendimiento en tiempo real (CPU, memoria, red). El registro guarda la actividad pasada del sistema para auditorías y detección de anomalías.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="memory">
+                <h2>Gestión de memoria</h2>
+
+                <p>Asigna y libera memoria a los procesos, garantiza que cada proceso tenga un espacio de direcciones separado y protegido, e implementa la memoria virtual.</p>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">Páginas de memoria</div>
+                        <p>Bloques contiguos de tamaño fijo de memoria virtual. El SO y la unidad de gestión de memoria (MMU) mantienen tablas de páginas que mapean direcciones virtuales a direcciones físicas.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Memoria virtual</div>
+                        <p>Separa las direcciones virtuales usadas por los procesos de la memoria física real. Permite que los procesos usen más memoria de la disponible físicamente, paginando datos entre la RAM y el disco según sea necesario.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="filesystems">
+                <h2>Sistemas de archivos</h2>
+
+                <p>Método que utiliza el SO para controlar cómo se almacenan y recuperan los datos en dispositivos de almacenamiento físico. Define reglas de nomenclatura, estructura de directorios, asignación de espacio en disco y lleva registro de las áreas disponibles.</p>
+
+                <table>
+                    <tr>
+                        <th>Sistema de archivos</th>
+                        <th>Usado por</th>
+                        <th>Características</th>
+                    </tr>
+                    <tr>
+                        <td>NTFS</td>
+                        <td>Windows</td>
+                        <td>Permisos, registro en diario, cifrado</td>
+                    </tr>
+                    <tr>
+                        <td>ext4</td>
+                        <td>Linux</td>
+                        <td>Sistema estándar de Linux, registro en diario</td>
+                    </tr>
+                    <tr>
+                        <td>APFS</td>
+                        <td>macOS</td>
+                        <td>Optimizado para SSD, cifrado integrado</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="devices">
+                <h2>Gestión de dispositivos</h2>
+
+                <p>Permite la interacción entre el SO y el hardware mediante controladores de dispositivo (drivers). Los drivers convierten comandos del SO en señales específicas para cada componente de hardware y permiten la transferencia de datos. El hardware se comunica de vuelta con el SO mediante interrupciones (por ejemplo, una tecla presionada o la llegada de un paquete de red).</p>
+
+                <p>La gestión de dispositivos proporciona una interfaz uniforme para que las aplicaciones accedan a los recursos de hardware, independientemente del hardware específico utilizado.</p>
+            </section>
+
+            <section id="security">
+                <h2>Seguridad</h2>
+
+                <p>Los mecanismos de seguridad del SO se enmarcan en la tríada CIA: Confidencialidad, Integridad y Disponibilidad. El SO proporciona las siguientes funciones de seguridad:</p>
+
+                <ul>
+                    <li>Firewalls</li>
+                    <li>Cifrado</li>
+                    <li>Control de acceso</li>
+                    <li>Autenticación de usuarios</li>
+                    <li>Parches de seguridad</li>
+                    <li>Sandboxing (aislamiento de aplicaciones)</li>
+                    <li>Registro de actividad (Logging)</li>
+                    <li>Verificación de integridad de datos</li>
+                </ul>
+            </section>
+
+            <section id="accounting">
+                <h2>Contabilidad de recursos (Accounting)</h2>
+
+                <p>Seguimiento y registro del uso de recursos: tiempo de CPU, memoria, espacio en disco y ancho de banda de red. Originalmente usada para cobrar a usuarios de mainframes multiusuario; hoy es fundamental en la computación en la nube, donde las organizaciones pagan por lo que usan.</p>
+
+                <p>Cada entrada de registro incluye: marca de tiempo, ID de proceso, ID de usuario, recursos solicitados y duración del uso. En algunos sistemas también se registran solicitudes denegadas, ejecuciones fallidas y errores durante la asignación de recursos.</p>
+
+                <p>Dónde ver los registros: Visor de eventos (Windows) · Consola (macOS) · directorio <code>/var/log</code> (Linux)</p>
+            </section>
+
+            <section id="gui">
+                <h2>Interfaz gráfica de usuario (GUI)</h2>
+
+                <p>El SO actúa como intermediario entre el usuario, las aplicaciones y el hardware. La GUI facilita la interacción mediante elementos visuales: íconos, menús, ventanas y botones, utilizables con mouse, teclado o pantalla táctil.</p>
+
+                <p>El campo de la interacción humano-computadora (HCI, por sus siglas en inglés) guía el diseño y la mejora de las interfaces informáticas.</p>
+            </section>
+
+            <section id="virtualization">
+                <h2>Virtualización</h2>
+
+                <p>Crea instancias virtuales del hardware físico, permitiendo que una sola máquina física aloje múltiples máquinas virtuales (VM). Cada VM opera como si tuviera hardware dedicado propio.</p>
+
+                <div class="def">
+                    <strong>Hipervisor (Hypervisor)</strong>
+                    <p>Capa de software especializada que gestiona las VM, divide los recursos físicos en fragmentos virtualizados y garantiza que las VM permanezcan dentro de sus límites sin interferir entre sí.</p>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">Uso eficiente de recursos</div>
+                        <p>Múltiples VM comparten la CPU, memoria y almacenamiento de una sola máquina, aumentando la utilización del hardware y reduciendo los costos de infraestructura.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Aislamiento</div>
+                        <p>Un fallo o compromiso de seguridad en una VM no afecta a las demás VM que se ejecutan en la misma máquina física.</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Por: Juan Casetta, Delfina Brugna y Uriel Benchat</p>
+        <a href="Inicio.html">Volver al inicio</a>
+    </footer>
+
+</body>
+</html>
