@@ -532,3 +532,14 @@
     margin: 0 auto;
     padding: 40px 20px;
 }
+
+/* ========================
+    Tamaño de imagenes de compuertas
+    ======================= */
+
+.page-compuertas img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
