@@ -493,3 +493,42 @@
     50%  { transform: scale(1.15); }
     100% { transform: scale(1); }
 }
+.login-box {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.login-box label {
+    font-size: 22px;
+}
+
+.login-box input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="submit"] {
+    background: #1d6f5c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.login-box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.page-login main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
